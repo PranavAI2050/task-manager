@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3000"; 
+const API_URL = "https://task-manager-backend-ad77.onrender.com"; 
 
 export const setAuthToken = (token) => {
   if (token) {
