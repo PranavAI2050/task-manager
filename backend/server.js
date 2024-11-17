@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 const MONGO_URI = process.env.MONGO_URI;
 
 app.use(cors({
-  origin: 'https://task-manager-backend-ad77.onrender.com',
+  origin: 'https://task-manager-frontend-qpco.onrender.com',
   optionsSuccessStatus: 200
 }));
 
