@@ -1,5 +1,3 @@
-I am encountering an error while attempting to connect to the MongoDB Atlas online service. so to show that the website is working as required, I have attached a working demo of the website below. This demo uses the MongoDB server installed locally on my machine.
-
 https://github.com/user-attachments/assets/26e43b47-1267-416c-97bd-87280e5a2e07
 # Backend Project Setup Guide
 
