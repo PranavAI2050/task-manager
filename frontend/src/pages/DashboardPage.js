@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchTasks, createTask, deleteTask, updateTask } from "../services/api";
+import './DashboardPage.css';  // Import the CSS file
 
 const DashboardPage = () => {
   const [tasks, setTasks] = useState([]);
@@ -20,7 +21,6 @@ const DashboardPage = () => {
     };
     getTasks();
   }, [statusFilter, sortOrder]);
-
 
   const handleAddTask = async () => {
     try {
@@ -67,9 +67,10 @@ const DashboardPage = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Task Dashboard</h1>
-      <div>
+
+      <div className="task-form">
         <input
           type="text"
           placeholder="Task Title"
@@ -95,7 +96,7 @@ const DashboardPage = () => {
         <button onClick={handleAddTask}>Add Task</button>
       </div>
 
-      <div>
+      <div className="filters">
         <label>
           Filter by Status:
           <select value={statusFilter} onChange={(e) => setStatusFilter(e.target.value)}>
@@ -119,44 +120,10 @@ const DashboardPage = () => {
         {tasks.map((task) => (
           <li key={task._id}>
             <strong>{task.title}</strong> - {task.description} - {new Date(task.dueDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} - {task.status}
-            <button onClick={() => handleDeleteTask(task._id)}>Delete</button>
-            <button onClick={() => handleEditClick(task)}>Edit</button>
+            <button className="delete" onClick={() => handleDeleteTask(task._id)}>Delete</button>
+            <button className="edit" onClick={() => handleEditClick(task)}>Edit</button>
           </li>
         ))}
       </ul>
 
-      {isEditFormVisible && taskToEdit && (
-        <div>
-          <h3>Edit Task</h3>
-          <input
-            type="text"
-            name="title"
-            value={taskToEdit.title}
-            onChange={handleEditFormChange}
-          />
-          <input
-            type="text"
-            name="description"
-            value={taskToEdit.description}
-            onChange={handleEditFormChange}
-          />
-          <input
-            type="date"
-            name="dueDate"
-            value={taskToEdit.dueDate}
-            onChange={handleEditFormChange}
-          />
-          <select name="status" value={taskToEdit.status} onChange={handleEditFormChange}>
-            <option value="To Do">To Do</option>
-            <option value="In Progress">In Progress</option>
-            <option value="Completed">Completed</option>
-          </select>
-          <button onClick={handleUpdateTask}>Save</button>
-          <button onClick={() => setEditFormVisible(false)}>Cancel</button>
-        </div>
-      )}
-    </div>
-  );
-};
-
-export default DashboardPage;
+      {isEditFormVisible &&
