@@ -1,38 +1,118 @@
-.App {
-  text-align: center;
+/* App.css */
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Body and general layout */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f7fa;
+  color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Container for the app */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Header and logout button */
+header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #007bff;
+  padding: 15px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+header h1 {
+  font-size: 24px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #e60000;
+}
+
+/* Welcome section styling */
+.welcome {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.welcome h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.welcome p {
+  font-size: 18px;
+}
+
+.welcome a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.welcome a:hover {
+  text-decoration: underline;
+}
+
+/* Navigation links */
+nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 18px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* For mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  .welcome h1 {
+    font-size: 28px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    margin-bottom: 10px;
   }
 }
