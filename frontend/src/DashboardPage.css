@@ -1,0 +1,163 @@
+/* DashboardPage.css */
+
+/* Basic Layout */
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Task form section */
+.task-form {
+  margin-bottom: 30px;
+}
+
+.task-form input,
+.task-form select,
+.task-form button {
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.task-form input[type="text"] {
+  width: 100%;
+  max-width: 400px;
+}
+
+.task-form select {
+  width: 150px;
+}
+
+.task-form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.task-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Filter and Sort section */
+.filters {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filters label {
+  font-size: 16px;
+}
+
+.filters select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.filters select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Task List */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+li button {
+  padding: 5px 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+li button.delete {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+}
+
+li button.delete:hover {
+  background-color: #e60000;
+}
+
+li button.edit {
+  background-color: #ffa500;
+  color: white;
+  border: none;
+}
+
+li button.edit:hover {
+  background-color: #e69500;
+}
+
+/* Edit Form */
+.edit-form {
+  margin-top: 20px;
+  background-color: #f0f8ff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.edit-form input,
+.edit-form select,
+.edit-form button {
+  width: 100%;
+  max-width: 400px;
+}
+
+.edit-form button {
+  background-color: #28a745;
+  color: white;
+}
+
+.edit-form button:hover {
+  background-color: #218838;
+}
+
+.edit-form .cancel-button {
+  background-color: #dc3545;
+  margin-top: 10px;
+}
+
+.edit-form .cancel-button:hover {
+  background-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+  }
+
+  .task-form input,
+  .task-form select {
+    width: 100%;
+  }
+
+  .task-form button {
+    width: 100%;
+  }
+}
