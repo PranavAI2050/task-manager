@@ -70,6 +70,7 @@ const DashboardPage = () => {
     <div className="container">
       <h1>Task Dashboard</h1>
 
+      {/* Add New Task Form */}
       <div className="task-form">
         <input
           type="text"
@@ -96,6 +97,7 @@ const DashboardPage = () => {
         <button onClick={handleAddTask}>Add Task</button>
       </div>
 
+      {/* Filters */}
       <div className="filters">
         <label>
           Filter by Status:
@@ -116,6 +118,7 @@ const DashboardPage = () => {
         </label>
       </div>
 
+      {/* Display List of Tasks */}
       <ul>
         {tasks.map((task) => (
           <li key={task._id}>
@@ -126,4 +129,45 @@ const DashboardPage = () => {
         ))}
       </ul>
 
-      {isEditFormVisible &&
+      {/* Edit Task Form */}
+      {isEditFormVisible && taskToEdit && (
+        <div className="edit-task-form">
+          <h3>Edit Task</h3>
+          <input
+            type="text"
+            name="title"
+            value={taskToEdit.title}
+            onChange={handleEditFormChange}
+            placeholder="Task Title"
+          />
+          <input
+            type="text"
+            name="description"
+            value={taskToEdit.description}
+            onChange={handleEditFormChange}
+            placeholder="Task Description"
+          />
+          <input
+            type="date"
+            name="dueDate"
+            value={taskToEdit.dueDate}
+            onChange={handleEditFormChange}
+          />
+          <select
+            name="status"
+            value={taskToEdit.status}
+            onChange={handleEditFormChange}
+          >
+            <option value="To Do">To Do</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+          </select>
+          <button onClick={handleUpdateTask}>Save Changes</button>
+          <button onClick={() => setEditFormVisible(false)}>Cancel</button>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default DashboardPage;
