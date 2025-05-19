@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { useNavigate , Link} from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { registerUser } from "../services/api";
+import './RegisterPage.css'; // Import the CSS file
 
 const RegisterPage = () => {
   const [email, setEmail] = useState("");
@@ -19,14 +20,7 @@ const RegisterPage = () => {
   };
 
   return (
-    <div>
-      <div>
-        <h1>register</h1>
-        <p>
-        Already have an account?{" "}
-        <Link to="/login">login</Link> here.
-          </p>
-      </div>
+    <div className="container">
       <h1>Register</h1>
       <form onSubmit={handleSubmit}>
         <input
@@ -43,6 +37,10 @@ const RegisterPage = () => {
         />
         <button type="submit">Register</button>
       </form>
+      <p>
+        Already have an account?{" "}
+        <Link to="/login">Login</Link> here.
+      </p>
     </div>
   );
 };
